@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/screen/welcome_page.dart';
 import 'package:news_app/theme_data.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -15,7 +16,7 @@ class GetStartedPage extends StatelessWidget {
             ),
             Container(
                 height: MediaQuery.of(context).size.height * 0.4,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("assets/get-started.png"),
                         fit: BoxFit.cover))),
@@ -39,16 +40,17 @@ class GetStartedPage extends StatelessWidget {
             ),
             const Spacer(),
             Container(
-              margin: EdgeInsets.only(bottom: 25),
+              margin: const EdgeInsets.only(bottom: 25),
               child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/welcome');
-                  },
-                  style: ElevatedButton.styleFrom(
-                      primary: backgroundColor1,
-                      fixedSize:
-                          Size(MediaQuery.of(context).size.width * 0.9, 50)),
-                  child: Text("Get Started")),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/welcome');
+                },
+                style: ElevatedButton.styleFrom(
+                    primary: backgroundColor1,
+                    fixedSize:
+                        Size(MediaQuery.of(context).size.width * 0.9, 50)),
+                child: Text("Get Started"),
+              ),
             )
           ],
         ),

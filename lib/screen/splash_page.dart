@@ -16,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
     Timer(
         const Duration(seconds: 2),
         () => Navigator.of(context).pushNamedAndRemoveUntil(
-            '/carousel-screen', (Route<dynamic> route) => false));
+            '/main-menu', (Route<dynamic> route) => false));
     super.initState();
   }
 

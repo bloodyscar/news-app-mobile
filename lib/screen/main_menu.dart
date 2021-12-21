@@ -7,7 +7,7 @@ class MainMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text("Main Menu Page"),
+        child: Text("Discover things of this world"),
       ),
     );
   }

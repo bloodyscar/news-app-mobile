@@ -65,8 +65,8 @@ class _CarouselScreenState extends State<CarouselScreen> {
                 return AnimatedContainer(
                   height: 10,
                   width: (index == _currentPage) ? 20 : 10,
-                  margin: EdgeInsets.symmetric(horizontal: 3),
-                  duration: Duration(milliseconds: 300),
+                  margin: const EdgeInsets.symmetric(horizontal: 3),
+                  duration: const Duration(milliseconds: 300),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     color: (index == _currentPage)
@@ -105,7 +105,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                         pageBuilder: (c, a1, a2) => GetStartedPage(),
                         transitionsBuilder: (c, anim, a2, child) =>
                             FadeTransition(opacity: anim, child: child),
-                        transitionDuration: Duration(milliseconds: 1000),
+                        transitionDuration: Duration(milliseconds: 1500),
                       ),
                     );
                   },

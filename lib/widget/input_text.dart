@@ -15,10 +15,16 @@ class InputText extends StatelessWidget {
           fillColor: Color(0xffF3F4F6),
           filled: true,
           enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffF3F4F6))),
+            borderSide: BorderSide(
+              color: Color(0xffF3F4F6),
+            ),
+          ),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
           focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xff475AD7))),
+            borderSide: BorderSide(
+              color: Color(0xff475AD7),
+            ),
+          ),
           prefixIcon: icons,
           labelText: title,
           labelStyle: TextStyle(color: greyPrimary)),

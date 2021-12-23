@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/screen/article_page.dart';
 import 'package:news_app/screen/carousel_screen.dart';
 import 'package:news_app/screen/get_started_page.dart';
 import 'package:news_app/screen/main_menu.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/get-started': (context) => const GetStartedPage(),
         '/welcome': (context) => const WelcomePage(),
         '/main-menu': (context) => const MainMenu(),
+        '/article-page': (context) => const ArticlePage(),
       },
     );
   }

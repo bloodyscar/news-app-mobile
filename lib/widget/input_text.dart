@@ -12,7 +12,7 @@ class InputText extends StatelessWidget {
     return TextField(
       obscureText: true,
       decoration: InputDecoration(
-          fillColor: Color(0xffF3F4F6),
+          fillColor: const Color(0xffF3F4F6),
           filled: true,
           enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(

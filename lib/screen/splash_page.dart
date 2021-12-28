@@ -16,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
     Timer(
         const Duration(seconds: 2),
         () => Navigator.of(context).pushNamedAndRemoveUntil(
-            '/article-page', (Route<dynamic> route) => false));
+            '/sliver-page', (Route<dynamic> route) => false));
     super.initState();
   }
 

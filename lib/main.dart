@@ -4,6 +4,7 @@ import 'package:news_app/screen/article_page.dart';
 import 'package:news_app/screen/carousel_screen.dart';
 import 'package:news_app/screen/get_started_page.dart';
 import 'package:news_app/screen/main_menu.dart';
+import 'package:news_app/screen/sliver_app.dart';
 import 'package:news_app/screen/splash_page.dart';
 import 'package:news_app/screen/welcome_page.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         '/get-started': (context) => const GetStartedPage(),
         '/welcome': (context) => const WelcomePage(),
         '/main-menu': (context) => const MainMenu(),
-        '/article-page': (context) => const ArticlePage(),
+        '/sliver-page': (context) => const SliverApp(),
       },
     );
   }

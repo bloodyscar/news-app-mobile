@@ -16,7 +16,7 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 16),
+      margin: const EdgeInsets.only(right: 16),
       height: 32,
       decoration:
           BoxDecoration(borderRadius: BorderRadius.circular(12), color: color),

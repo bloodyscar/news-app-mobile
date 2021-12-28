@@ -28,7 +28,7 @@ class CategoryImgWidget extends StatelessWidget {
             fit: BoxFit.cover),
       ),
       child: Container(
-        margin: EdgeInsets.all(24),
+        margin: const EdgeInsets.all(24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,7 @@ class CategoryImgWidget extends StatelessWidget {
               children: [
                 Text(
                   category,
-                  style: TextStyle(fontSize: 12, color: Colors.white),
+                  style: const TextStyle(fontSize: 12, color: Colors.white),
                 ),
                 const SizedBox(
                   height: 8,

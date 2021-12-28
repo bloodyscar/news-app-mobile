@@ -27,14 +27,14 @@ Widget header(BuildContext context) {
         height: MediaQuery.of(context).size.height * 0.5,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/thumbnail-min.jpg"),
+            image: const AssetImage("assets/thumbnail-min.jpg"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
                 Colors.black.withOpacity(0.5), BlendMode.darken),
           ),
         ),
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 35),
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 35),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +43,7 @@ Widget header(BuildContext context) {
                   title: "US Election",
                   color: backgroundColor1,
                   isActive: true),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text(
                 "The latest situation in the presidential election",
                 style: TextStyle(
@@ -55,7 +55,7 @@ Widget header(BuildContext context) {
       ),
       SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 28),
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 28),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -100,7 +100,7 @@ Widget content(BuildContext context) {
       ),
     ),
     child: Container(
-      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -109,7 +109,7 @@ Widget content(BuildContext context) {
             style: TextStyle(
                 color: Colors.black, fontSize: 16, fontWeight: semiBold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(

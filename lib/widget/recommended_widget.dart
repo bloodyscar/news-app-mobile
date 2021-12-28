@@ -15,7 +15,7 @@ class RecommendedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -28,7 +28,7 @@ class RecommendedWidget extends StatelessWidget {
                   DecorationImage(image: AssetImage(imgUrl), fit: BoxFit.cover),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 16,
           ),
           Expanded(

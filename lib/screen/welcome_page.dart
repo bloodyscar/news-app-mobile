@@ -115,7 +115,7 @@ class BodyWelcome extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset("assets/google.png"),
-                Spacer(),
+                const Spacer(),
                 Text(
                   "Sign In with Google",
                   style: TextStyle(
@@ -123,7 +123,7 @@ class BodyWelcome extends StatelessWidget {
                       fontSize: 16,
                       fontWeight: FontWeight.w600),
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             ),
           ),

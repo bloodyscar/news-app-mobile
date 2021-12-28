@@ -19,10 +19,10 @@ class _MainMenuState extends State<MainMenu> {
   int currentIndex = 0;
 
   final screens = [
-    HomePage(),
-    CategoryPage(),
-    BookmarkPage(),
-    ProfilePage(),
+    const HomePage(),
+    const CategoryPage(),
+    const BookmarkPage(),
+    const ProfilePage(),
   ];
 
   @override

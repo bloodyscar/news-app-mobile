@@ -70,7 +70,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     color: (index == _currentPage)
-                        ? Color(0xff475AD7)
+                        ? const Color(0xff475AD7)
                         : Colors.grey[350],
                   ),
                 );
@@ -96,16 +96,16 @@ class _CarouselScreenState extends State<CarouselScreen> {
             ),
             const Spacer(),
             Container(
-              margin: EdgeInsets.only(bottom: 25),
+              margin: const EdgeInsets.only(bottom: 25),
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                       context,
                       PageRouteBuilder(
-                        pageBuilder: (c, a1, a2) => GetStartedPage(),
+                        pageBuilder: (c, a1, a2) => const GetStartedPage(),
                         transitionsBuilder: (c, anim, a2, child) =>
                             FadeTransition(opacity: anim, child: child),
-                        transitionDuration: Duration(milliseconds: 1500),
+                        transitionDuration: const Duration(milliseconds: 1500),
                       ),
                     );
                   },
@@ -113,7 +113,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                       primary: backgroundColor1,
                       fixedSize:
                           Size(MediaQuery.of(context).size.width * 0.9, 50)),
-                  child: Text("Next")),
+                  child: const Text("Next")),
             )
           ],
         ),

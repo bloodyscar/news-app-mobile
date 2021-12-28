@@ -9,7 +9,7 @@ class ImageCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
           image: DecorationImage(image: AssetImage(url), fit: BoxFit.cover)),
     );
   }

@@ -24,3 +24,5 @@ class ArticleModel {
     content = json["content"];
   }
 }
+
+class UninitializedArticle extends ArticleModel{}

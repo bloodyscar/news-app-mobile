@@ -16,12 +16,30 @@ import 'package:news_app/models/article_model.dart';
 import 'package:news_app/models/user_model.dart';
 
 void main() async {
-  UserModel userModel = UserModel();
-  var url = Uri.parse("https://reqres.in/api/users/2");
-  var getResponse = await http.get(url);
-  var jsonDecode = json.decode(getResponse.body);
-  var result = jsonDecode["data"] as Map<String, dynamic>;
-  UserModel.fromJson(result);
+  var url = Uri.parse(
+      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=c2c5a5c7b9ca4033a88b42b2352f0b4c");
+  var response = await http.get(url);
 
-  print(userModel.email);
+  var jsonResult = json.decode(response.body) as Map<String, dynamic>;
+  var result = jsonResult["articles"];
+  List<ArticleModel> allArticle = [];
+  for (var i = 0; i < result.length; i++) {
+    allArticle.add(ArticleModel.fromJson(result[i]));
+  }
+  print(allArticle);
 }
+
+// var url = Uri.parse(
+//       "https://newsapi.org/v2/top-headlines?country=id&category=science&apiKey=c2c5a5c7b9ca4033a88b42b2352f0b4c");
+//   var response = await http.get(url);
+//   var jsonDecode = json.decode(response.body);
+//   var getArticles = (jsonDecode as Map<String, dynamic>)["articles"];
+
+//   List<ArticleModel> allArticles = [];
+//   for (var i = 0; i < getArticles.length; i++) {
+//     allArticles.add(ArticleModel.fromJson(getArticles[i]));
+//   }
+
+//   for (var i = 0; i < allArticles.length; i++) {
+//     print(allArticles[i].author);
+//   }

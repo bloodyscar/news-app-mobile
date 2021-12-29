@@ -1,25 +1,49 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/bloc/article_bloc.dart';
+import 'package:news_app/bloc/user_bloc.dart';
+import 'package:news_app/models/article_model.dart';
+import 'package:news_app/models/user_model.dart';
 import 'package:news_app/theme_data.dart';
 import 'package:news_app/widget/category_img_widget.dart';
 import 'package:news_app/widget/category_widget.dart';
 import 'package:news_app/widget/recommended_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        SizedBox(
-          height: 28,
-        ),
-        header(),
-        SizedBox(
-          height: 24,
-        ),
-        content()
-      ],
+    return Container(
+      child: BlocBuilder<ArticleBloc, List<ArticleModel>>(
+        builder: (context, article) {
+          if (article is UninitializedArticle) {
+            return Center(
+              child: SizedBox(
+                  width: 30, height: 30, child: CircularProgressIndicator()),
+            );
+          } else {
+            return ListView(
+              children: [
+                SizedBox(
+                  height: 30,
+                ),
+                header(),
+                content(
+                  contentArticle: article,
+                )
+              ],
+            );
+          }
+        },
+      ),
     );
   }
 }
@@ -74,10 +98,14 @@ class header extends StatelessWidget {
 }
 
 class content extends StatelessWidget {
-  const content({Key? key}) : super(key: key);
+  List<ArticleModel> contentArticle;
+  content({Key? key, required this.contentArticle}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    for (var index = 0; index < contentArticle.length; index++) {
+      print(contentArticle[index].author);
+    }
     return Column(
       children: [
         SingleChildScrollView(

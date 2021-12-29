@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
           '/get-started': (context) => const GetStartedPage(),
           '/welcome': (context) => const WelcomePage(),
           '/main-menu': (context) => const MainMenu(),
-          '/sliver-page': (context) => const SliverApp(),
         },
       ),
     );

@@ -3,7 +3,8 @@ import 'package:news_app/models/article_model.dart';
 import 'package:news_app/theme_data.dart';
 
 class SliverApp extends StatefulWidget {
-  const SliverApp({Key? key}) : super(key: key);
+  ArticleModel article;
+  SliverApp({Key? key, required this.article}) : super(key: key);
 
   @override
   State<SliverApp> createState() => _SliverAppState();
@@ -12,6 +13,7 @@ class SliverApp extends StatefulWidget {
 class _SliverAppState extends State<SliverApp> {
   @override
   Widget build(BuildContext context) {
+    print(widget);
     return Scaffold(
       backgroundColor: Colors.black87,
       body: CustomScrollView(
@@ -27,12 +29,12 @@ class _SliverAppState extends State<SliverApp> {
             pinned: true,
             expandedHeight: MediaQuery.of(context).size.height * 0.3,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text("TEST"),
+              title: Text("${widget.article.author}"),
               background: Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: const AssetImage(
-                      "assets/thumbnail-min.jpg",
+                    image: NetworkImage(
+                      "${widget.article.urlToImage}",
                     ),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
@@ -58,7 +60,7 @@ class _SliverAppState extends State<SliverApp> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Results",
+                      "${widget.article.title}",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -68,18 +70,7 @@ class _SliverAppState extends State<SliverApp> {
                       height: 10,
                     ),
                     Text(
-                      "Leads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races."
-                      "\n\nFor more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters."
-                      "Leads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races."
-                      "\n\nFor more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters."
-                      "Leads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races."
-                      "\n\nFor more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters."
-                      "Leads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races."
-                      "\n\nFor more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters."
-                      "Leads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races."
-                      "\n\nFor more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters."
-                      "Leads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races."
-                      "\n\nFor more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters.",
+                      "${widget.article.description}\n\n${widget.article.description}\n\n${widget.article.description}\n\n${widget.article.description}${widget.article.description}\n\n${widget.article.description}\n\n${widget.article.description}\n\n${widget.article.description}",
                       style: TextStyle(color: greyDarker, fontSize: 16),
                     ),
                   ],

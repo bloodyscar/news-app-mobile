@@ -36,6 +36,9 @@ class _HomePageState extends State<HomePage> {
                   height: 30,
                 ),
                 header(),
+                SizedBox(
+                  height: 20,
+                ),
                 content(
                   contentArticle: article,
                 )
@@ -103,9 +106,6 @@ class content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    for (var index = 0; index < contentArticle.length; index++) {
-      print(contentArticle[index].author);
-    }
     return Column(
       children: [
         SingleChildScrollView(
@@ -151,32 +151,26 @@ class content extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                CategoryImgWidget(
-                  category: "Politics",
-                  title: "The latest situation in the presidential election",
-                  urlImg: "assets/thumbnail-min.jpg",
-                ),
-                CategoryImgWidget(
-                  category: "Law",
-                  title: "An updated daily front page",
-                  urlImg: "assets/thumbnail-2.jpg",
-                ),
-              ],
+              children: contentArticle
+                  .map((articles) => CategoryImgWidget(
+                        articleModel: articles,
+                      ))
+                  .toList(),
             ),
           ),
         ),
         const SizedBox(
           height: 48,
         ),
-        const recommended()
+        Recommended(recommendedArticle: contentArticle)
       ],
     );
   }
 }
 
-class recommended extends StatelessWidget {
-  const recommended({Key? key}) : super(key: key);
+class Recommended extends StatelessWidget {
+  List<ArticleModel> recommendedArticle;
+  Recommended({Key? key, required this.recommendedArticle}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -200,20 +194,12 @@ class recommended extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          RecommendedWidget(
-            category: "UI/UX Design",
-            title: "A Simple Trick For Creating Color Palettes Quickly",
-            imgUrl: "assets/thumbnail-min.jpg",
-          ),
-          RecommendedWidget(
-            category: "Art",
-            title: "Six steps to creating a color palette",
-            imgUrl: "assets/thumbnail-2.jpg",
-          ),
-          RecommendedWidget(
-            category: "Art",
-            title: "Six steps to creating a color palette",
-            imgUrl: "assets/thumbnail-2.jpg",
+          Column(
+            children: recommendedArticle
+                .map((articles) => RecommendedWidget(
+                      articleModel: articles,
+                    ))
+                .toList(),
           ),
         ],
       ),
